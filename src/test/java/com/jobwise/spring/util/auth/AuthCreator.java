@@ -13,11 +13,11 @@ import java.util.List;
 
 public class AuthCreator {
 
-    public static final String USERNAME = "username";
+    public static final String USERNAME = "adam";
 
-    public static final String EMAIL = "test@mail.com";
+    public static final String EMAIL = "adam@gmail.com";
 
-    public static final String PASSWORD = "password";
+    public static final String PASSWORD = "123456";
     public static final String TOKEN = "token-test";
 
     public static final User USER = UserCreator.createUser();

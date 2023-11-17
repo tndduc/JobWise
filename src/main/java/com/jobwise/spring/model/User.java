@@ -32,9 +32,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Size(max = 50)
     private String email;
-    @NotBlank
-    @Size(max = 50)
-    private String lastname;
 
 
     @NotBlank

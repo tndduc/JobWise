@@ -51,8 +51,8 @@ public class AuthControllerIT {
     void signIn_ReturnsJwtResponse_WhenSuccessful() {
         LoginRequest login = LoginRequest
                 .builder()
-                .email("admin@mail.com")
-                .password("password")
+                .email("adam@gmail.com")
+                .password("123456")
                 .build();
 
         ResponseEntity<JwtResponse> entity = httpClient
