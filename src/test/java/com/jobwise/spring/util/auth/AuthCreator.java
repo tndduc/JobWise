@@ -13,7 +13,9 @@ import java.util.List;
 
 public class AuthCreator {
 
-    public static final String USERNAME = "adam";
+    public static final String FIRST_NAME = "adam";
+    public static final String LAST_NAME = "tom";
+
 
     public static final String EMAIL = "adam@gmail.com";
 
@@ -34,7 +36,8 @@ public class AuthCreator {
         return SignupRequest
                 .builder()
                 .email(EMAIL)
-                .username(USERNAME)
+                .first_name(FIRST_NAME)
+                .last_name(LAST_NAME)
                 .password(PASSWORD)
                 .build();
     }
@@ -46,7 +49,8 @@ public class AuthCreator {
                 .type("Bearer")
                 .refreshToken(RefreshTokenCreator.TOKEN)
                 .id(USER.getId().toString())
-                .username(USER.getUsername())
+                .first_name(USER.getFirst_name())
+                .last_name(USER.getLast_name())
                 .email(USER.getEmail())
                 .roles(List.of("ROLE_USER"))
                 .build();

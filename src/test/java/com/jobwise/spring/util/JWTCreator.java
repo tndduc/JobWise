@@ -39,7 +39,8 @@ public class JWTCreator {
     public User createUser() {
         return User
                 .builder()
-                .username("User")
+                .first_name("User")
+                .last_name("Panda")
                 .email("user@mail.com")
                 .password(passwordEncoder.encode("password"))
                 .build();
@@ -48,7 +49,8 @@ public class JWTCreator {
     public User createModerator() {
         return User
                 .builder()
-                .username("Moderator")
+                .first_name("Moderator")
+                .last_name("Phan")
                 .email("mod@mail.com")
                 .password(passwordEncoder.encode("password"))
                 .build();
@@ -57,7 +59,8 @@ public class JWTCreator {
     public User createAdmin() {
         return User
                 .builder()
-                .username("Admin")
+                .first_name("Admin")
+                .last_name("Happ")
                 .email("admin@mail.com")
                 .password(passwordEncoder.encode("password"))
                 .build();

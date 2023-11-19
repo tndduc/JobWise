@@ -56,7 +56,8 @@ public class LoadDatabase {
             User adminUser = User
                     .builder()
                     .email(data.getUser().getEmail())
-                    .username(data.getUser().getUsername())
+                    .first_name(data.getUser().getFirst_name())
+                    .last_name(data.getUser().getLast_name())
                     .password(new BCryptPasswordEncoder().encode(data.getUser().getPassword()))
                     .roles(Set.of(adminRole.get()))
                     .build();

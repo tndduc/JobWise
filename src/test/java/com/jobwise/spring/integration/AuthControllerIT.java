@@ -64,7 +64,6 @@ public class AuthControllerIT {
 
         assertThat(entity.getBody()).isNotNull();
 
-        assertThat(entity.getBody().getUsername()).isEqualTo("Admin");
     }
 
     @Test

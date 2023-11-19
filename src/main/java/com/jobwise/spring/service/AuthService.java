@@ -63,7 +63,8 @@ public class AuthService {
                 .builder()
                 .id(userDetails.getId().toString())
                 .email(userDetails.getEmail())
-                .username(userDetails.getUsername())
+                .first_name(userDetails.getFirstName())
+                .first_name(userDetails.getLastName())
                 .token(jwt)
                 .refreshToken(refreshToken.getToken())
                 .roles(roles)
@@ -79,7 +80,8 @@ public class AuthService {
 
         User user = User
                 .builder()
-                .username(signUpRequest.getUsername())
+                .first_name(signUpRequest.getFirst_name())
+                .last_name(signUpRequest.getLast_name())
                 .email(signUpRequest.getEmail())
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .roles(roles)

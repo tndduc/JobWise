@@ -20,7 +20,8 @@ public class UserDetailsImpl implements UserDetails {
     @Getter
     private UUID id;
 
-    private String username;
+    private String last_name;
+    private String first_name;
 
     @Getter
     private String email;
@@ -39,7 +40,8 @@ public class UserDetailsImpl implements UserDetails {
 
         return new UserDetailsImpl(
                 user.getId(),
-                user.getUsername(),
+                user.getFirst_name(),
+                user.getLast_name(),
                 user.getEmail(),
                 user.getPassword(),
                 authorities
@@ -58,8 +60,9 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return username;
+        return null;
     }
+
 
     @Override
     public boolean isAccountNonExpired() {
@@ -91,6 +94,14 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, authorities);
+        return Objects.hash(id, password, authorities);
+    }
+
+    public String getLastName() {
+        return first_name;
+    }
+
+    public String getFirstName() {
+        return last_name;
     }
 }

@@ -18,21 +18,24 @@ public class JwtResponse {
     @Schema(description = "Token to generate others access tokens")
     private String refreshToken;
     private String id;
-    private String username;
+    private String first_name;
+    private String last_name;
+
     private String email;
     private List<String> roles;
 
-    public JwtResponse(String accessToken, String refreshToken, String id, String username, String email, List<String> roles) {
+    public JwtResponse(String accessToken, String refreshToken, String id, String first_name,String last_name, String email, List<String> roles) {
         this.token = accessToken;
         this.refreshToken = refreshToken;
         this.id = id;
-        this.username = username;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
         this.roles = roles;
     }
 
-    public JwtResponse(String accessToken, String type, String refreshToken, String id, String username, String email, List<String> roles) {
-        this(accessToken, refreshToken, id, username, email, roles);
+    public JwtResponse(String accessToken, String type, String refreshToken, String id, String first_name,String last_name, String email, List<String> roles) {
+        this(accessToken, refreshToken, id, first_name,last_name, email, roles);
 
         if (type == null) {
             type = "Bearer";
