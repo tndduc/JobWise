@@ -1,6 +1,7 @@
 package com.jobwise.spring.security.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.jobwise.spring.model.Role;
 import com.jobwise.spring.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,10 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.sql.Date;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -19,15 +18,35 @@ public class UserDetailsImpl implements UserDetails {
 
     @Getter
     private UUID id;
-
+    @Getter
     private String last_name;
+    @Getter
     private String first_name;
+    @Getter
+    private Date create_at;
+    @Getter
+    private Date update_at;
+    @Getter
+    private String photo;
+    @Getter
+    private String address;
+    @Getter
+    private String phone;
+    @Getter
+    private String company_id;
+    @Getter
+    private String school_id;
+    @Getter
+    private String description;
+    @Getter
+    private String status;
 
     @Getter
     private String email;
 
     @JsonIgnore
     private String password;
+
 
     private Collection<? extends GrantedAuthority> authorities;
 
@@ -42,6 +61,15 @@ public class UserDetailsImpl implements UserDetails {
                 user.getId(),
                 user.getFirst_name(),
                 user.getLast_name(),
+                user.getCreate_at(),
+                user.getUpdate_at(),
+                user.getPhoto(),
+                user.getAddress(),
+                user.getPhone(),
+                user.getCompany_id(),
+                user.getSchool_id(),
+                user.getDescription(),
+                user.getStatus(),
                 user.getEmail(),
                 user.getPassword(),
                 authorities
@@ -97,11 +125,5 @@ public class UserDetailsImpl implements UserDetails {
         return Objects.hash(id, password, authorities);
     }
 
-    public String getLastName() {
-        return first_name;
-    }
 
-    public String getFirstName() {
-        return last_name;
-    }
 }

@@ -66,15 +66,11 @@ public class AuthService {
 
         RefreshToken refreshToken = refreshTokenService.create(userDetails.getId(), userMachineDetails);
 
-        return JwtResponse
+            return JwtResponse
                 .builder()
-                .id(userDetails.getId().toString())
-                .email(userDetails.getEmail())
-                .first_name(userDetails.getFirstName())
-                .first_name(userDetails.getLastName())
+                .user(userDetails)
                 .token(jwt)
                 .refreshToken(refreshToken.getToken())
-                .roles(roles)
                 .build();
         } catch (BadCredentialsException e) {
             throw new IllegalArgumentException("Incorrect password.");

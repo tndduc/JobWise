@@ -6,6 +6,7 @@ import com.jobwise.spring.payload.request.TokenRefreshRequest;
 import com.jobwise.spring.payload.response.JwtResponse;
 import com.jobwise.spring.payload.response.TokenRefreshResponse;
 import com.jobwise.spring.model.User;
+import com.jobwise.spring.security.service.UserDetailsImpl;
 import com.jobwise.spring.util.token.RefreshTokenCreator;
 import com.jobwise.spring.util.user.UserCreator;
 
@@ -48,11 +49,12 @@ public class AuthCreator {
                 .token(TOKEN)
                 .type("Bearer")
                 .refreshToken(RefreshTokenCreator.TOKEN)
-                .id(USER.getId().toString())
-                .first_name(USER.getFirst_name())
-                .last_name(USER.getLast_name())
-                .email(USER.getEmail())
-                .roles(List.of("ROLE_USER"))
+                .user(UserDetailsImpl.build(new User()))
+//                .id(USER.getId().toString())
+//                .first_name(USER.getFirst_name())
+//                .last_name(USER.getLast_name())
+//                .email(USER.getEmail())
+//                .roles(List.of("ROLE_USER"))
                 .build();
     }
 

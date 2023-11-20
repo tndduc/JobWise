@@ -1,5 +1,6 @@
 package com.jobwise.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -56,6 +57,7 @@ public class User extends BaseEntity {
 
     @NotBlank
     @Size(max = 150)
+    @JsonIgnore
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
