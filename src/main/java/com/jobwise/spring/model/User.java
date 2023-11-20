@@ -29,7 +29,6 @@ public class User extends BaseEntity {
     @NotBlank
     @Size(max = 50)
     private String email;
-    @NotBlank
     private Date create_at;
 
     private Date update_at;

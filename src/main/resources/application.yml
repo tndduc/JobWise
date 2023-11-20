@@ -4,7 +4,7 @@ spring:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://ep-white-cloud-44145397.ap-southeast-1.aws.neon.tech/jobwise?sslmode=require
+    url: jdbc:postgresql://ep-white-cloud-44145397.ap-southeast-1.aws.neon.tech/jw_test?sslmode=require
     username: tndduc
     password: hbMeo2rtA4jL
 

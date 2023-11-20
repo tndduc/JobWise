@@ -17,6 +17,7 @@ import com.jobwise.spring.security.jwt.JwtUtils;
 import com.jobwise.spring.security.service.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -41,6 +42,12 @@ public class AuthService {
     final RefreshTokenService refreshTokenService;
 
     public JwtResponse signIn(LoginRequest loginRequest, UserMachineDetails userMachineDetails) {
+        if (!userRepository.existsByEmail(loginRequest.getEmail())) {
+            throw new IllegalArgumentException("Email does not exist.");
+        }
+
+        try {
+
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginRequest.getEmail(),
                 loginRequest.getPassword()
@@ -69,6 +76,9 @@ public class AuthService {
                 .refreshToken(refreshToken.getToken())
                 .roles(roles)
                 .build();
+        } catch (BadCredentialsException e) {
+            throw new IllegalArgumentException("Incorrect password.");
+        }
     }
 
     public User signUp(SignupRequest signUpRequest) {
@@ -106,5 +116,7 @@ public class AuthService {
     public void logout(UUID userId) {
         refreshTokenService.deleteByUserId(userId);
     }
+
+
 
 }

@@ -34,14 +34,10 @@ public class AuthController {
 
     final AuthService authService;
 
-    @PostMapping("/signin")
+    @PostMapping("/sign-in")
     @Operation(summary = "User sign in", tags = "Auth")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Successful"),
-            @ApiResponse(responseCode = "400", description = "When user not found or incorrect password"),
-            @ApiResponse(responseCode = "500", description = "When server error")
-    })
-    public ResponseEntity<JwtResponse> signIn(@Valid @RequestBody LoginRequest loginRequest, HttpServletRequest request) {
+
+    public ResponseEntity<?> signIn(@Valid @RequestBody LoginRequest loginRequest, HttpServletRequest request) {
         UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
         String ipAddress = HttpUtils.getClientIp();
 
@@ -51,8 +47,12 @@ public class AuthController {
                 .browser(userAgent.getBrowser().getName())
                 .operatingSystem(userAgent.getOperatingSystem().getName())
                 .build();
-
-        return ResponseEntity.ok(authService.signIn(loginRequest, userMachineDetails));
+        try {
+            JwtResponse response = authService.signIn(loginRequest, userMachineDetails);
+            return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        }
     }
 
     @PostMapping("/signup")
