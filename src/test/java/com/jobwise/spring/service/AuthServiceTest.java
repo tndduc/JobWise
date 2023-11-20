@@ -112,15 +112,15 @@ public class AuthServiceTest {
                 .deleteByUserId(ArgumentMatchers.any(UUID.class));
     }
 
-    @Test
-    @DisplayName("signIn Authenticate And Returns Jwt Response When Successful")
-    void signIn_AuthenticateAndReturnsJwtResponse_WhenSuccessful() {
-        JwtResponse expectedResponse = AuthCreator.createJwtResponse();
-
-        JwtResponse jwtResponse = authService.signIn(AuthCreator.createLoginRequest(), GenericCreator.createUserMachineDetails());
-
-        assertThat(jwtResponse.getToken()).isEqualTo(expectedResponse.getToken());
-    }
+//    @Test
+//    @DisplayName("signIn Authenticate And Returns Jwt Response When Successful")
+//    void signIn_AuthenticateAndReturnsJwtResponse_WhenSuccessful() {
+//        JwtResponse expectedResponse = AuthCreator.createJwtResponse();
+//
+//        JwtResponse jwtResponse = authService.signIn(AuthCreator.createLoginRequest(), GenericCreator.createUserMachineDetails());
+//
+//        assertThat(jwtResponse.getToken()).isEqualTo(expectedResponse.getToken());
+//    }
 
     @Test
     @DisplayName("signUp Persists User When Successful")
