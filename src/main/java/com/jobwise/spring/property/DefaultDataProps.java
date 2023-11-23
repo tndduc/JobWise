@@ -7,7 +7,11 @@ import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.context.annotation.Configuration;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @Configuration
 @ConfigurationProperties(prefix = "app.init")
 @Getter

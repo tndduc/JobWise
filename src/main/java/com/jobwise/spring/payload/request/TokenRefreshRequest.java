@@ -4,7 +4,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @Getter
 @Setter
 @AllArgsConstructor

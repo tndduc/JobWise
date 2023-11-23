@@ -12,7 +12,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.sql.Date;
 import java.util.*;
 import java.util.stream.Collectors;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @AllArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
@@ -88,7 +92,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;
+        return email;
     }
 
 

@@ -1,7 +1,11 @@
 package com.jobwise.spring.util;
 
 import com.jobwise.spring.payload.UserMachineDetails;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 public class GenericCreator {
 
     public static final String BROWSER = "browser-test";

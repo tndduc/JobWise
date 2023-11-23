@@ -26,7 +26,11 @@ import java.util.UUID;
 import static com.jobwise.spring.util.role.RoleCreator.createRole;
 import static com.jobwise.spring.util.user.UserCreator.createUser;
 import static org.assertj.core.api.Assertions.*;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @ExtendWith(SpringExtension.class)
 @DisplayName("Tests for UserService")
 public class UserServiceTest {

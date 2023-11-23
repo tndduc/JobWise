@@ -11,7 +11,11 @@ import com.jobwise.spring.util.token.RefreshTokenCreator;
 import com.jobwise.spring.util.user.UserCreator;
 
 import java.util.List;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 public class AuthCreator {
 
     public static final String FIRST_NAME = "adam";

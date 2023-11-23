@@ -32,7 +32,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.*;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @ExtendWith(SpringExtension.class)
 @DisplayName("Tests for AuthService")
 public class AuthServiceTest {

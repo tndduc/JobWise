@@ -10,7 +10,11 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 @Getter
 @Setter
 public class PageableResponse<T> extends PageImpl<T> {

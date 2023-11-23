@@ -29,7 +29,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthService {

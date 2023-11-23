@@ -11,6 +11,7 @@ import com.jobwise.spring.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +23,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.UUID;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/users")
@@ -36,6 +41,8 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+
     @Operation(summary = "Returns all users with pagination", tags = "Users")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Successful"),
@@ -49,6 +56,7 @@ public class UserController {
 
     @GetMapping("/tokens")
     @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
     @Operation(summary = "Returns all users tokens with pagination", tags = "Users")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Successful"),
@@ -62,6 +70,8 @@ public class UserController {
 
     @GetMapping("/my/tokens")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+
     @Operation(summary = "Returns all user tokens with pagination", tags = "Users")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Successful"),
@@ -79,6 +89,8 @@ public class UserController {
 
     @PatchMapping("/promote")
     @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+
     @Operation(summary = "Promote user to others roles", tags = "Users")
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Successful"),
@@ -95,6 +107,8 @@ public class UserController {
 
     @DeleteMapping("/logout/{userId}")
     @PreAuthorize("hasRole('ADMIN')")
+    @SecurityRequirement(name = "Bearer Authentication")
+
     @Operation(summary = "User logout", tags = "Users")
     @ApiResponses({
             @ApiResponse(responseCode = "204", description = "Successful"),
@@ -109,5 +123,6 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
+
 
 }

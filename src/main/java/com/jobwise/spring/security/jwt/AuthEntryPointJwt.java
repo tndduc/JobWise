@@ -14,7 +14,11 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @Log4j2
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {

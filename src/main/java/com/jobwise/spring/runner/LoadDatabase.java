@@ -14,7 +14,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/16/2023
+ */
 @Configuration
 public class LoadDatabase {
 

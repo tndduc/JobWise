@@ -1,7 +1,11 @@
 package com.jobwise.spring.payload;
 
 import lombok.*;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

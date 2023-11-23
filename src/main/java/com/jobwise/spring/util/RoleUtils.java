@@ -4,7 +4,11 @@ import com.jobwise.spring.model.ERole;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 public class RoleUtils {
 
     public static Map<String, ERole> roles = new HashMap<>() {{

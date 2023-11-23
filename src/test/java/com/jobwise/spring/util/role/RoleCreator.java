@@ -4,7 +4,11 @@ import com.jobwise.spring.model.ERole;
 import com.jobwise.spring.model.Role;
 
 import java.util.UUID;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 public class RoleCreator {
 
     public static final UUID ID = UUID.fromString("357dc489-a26e-4959-ae07-33487d831193");

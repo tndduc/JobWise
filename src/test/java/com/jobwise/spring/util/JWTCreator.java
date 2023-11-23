@@ -17,7 +17,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @Component
 public class JWTCreator {
     @Autowired

@@ -11,7 +11,11 @@ import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder

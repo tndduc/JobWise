@@ -6,7 +6,11 @@ import lombok.*;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 @Getter
 @Setter
 @NoArgsConstructor

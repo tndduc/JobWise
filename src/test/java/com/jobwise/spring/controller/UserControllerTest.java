@@ -31,7 +31,11 @@ import static com.jobwise.spring.util.token.RefreshTokenCreator.createUserTokenR
 import static com.jobwise.spring.util.user.UserCreator.createPromoteRequest;
 import static com.jobwise.spring.util.user.UserCreator.createUser;
 import static org.assertj.core.api.Assertions.assertThat;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @ExtendWith(SpringExtension.class)
 @DisplayName("Tests for UserController")
 public class UserControllerTest {

@@ -2,7 +2,11 @@ package com.jobwise.spring.payload.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 @Getter
 @Setter
 @AllArgsConstructor

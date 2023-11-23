@@ -16,7 +16,11 @@ import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @RequiredArgsConstructor
 @Service
 public class RefreshTokenService {

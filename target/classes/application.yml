@@ -1,12 +1,21 @@
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#  datasource:
+#    url: jdbc:postgresql://ep-white-cloud-44145397.ap-southeast-1.aws.neon.tech/jw_test?sslmode=require
+#    username: tndduc
+#    password: hbMeo2rtA4jL
 spring:
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://ep-white-cloud-44145397.ap-southeast-1.aws.neon.tech/jw_test?sslmode=require
-    username: tndduc
-    password: hbMeo2rtA4jL
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: postgres
 
 server:
   tomcat:

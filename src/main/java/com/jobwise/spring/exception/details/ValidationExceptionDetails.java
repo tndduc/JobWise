@@ -7,7 +7,11 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/13/2023
+ */
 @Getter
 @SuperBuilder
 @AllArgsConstructor

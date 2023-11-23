@@ -24,7 +24,11 @@ import org.springframework.test.annotation.DirtiesContext;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureTestDatabase
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)

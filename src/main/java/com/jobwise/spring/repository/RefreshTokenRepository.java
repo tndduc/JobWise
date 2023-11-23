@@ -9,7 +9,11 @@ import org.springframework.data.jpa.repository.Modifying;
 
 import java.util.Optional;
 import java.util.UUID;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, UUID> {
     Optional<RefreshToken> findByToken(String token);
 

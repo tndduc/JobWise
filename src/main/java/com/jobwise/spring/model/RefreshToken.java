@@ -6,7 +6,11 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.time.Instant;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder

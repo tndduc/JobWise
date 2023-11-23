@@ -8,7 +8,11 @@ import com.jobwise.spring.model.User;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 public class RefreshTokenCreator {
 
     public static final UUID ID = UUID.fromString("b11b35d6-ad2c-4aa9-87b4-a58cea010f0a");

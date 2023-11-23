@@ -6,7 +6,11 @@ import com.jobwise.spring.model.Role;
 import com.jobwise.spring.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @Service
 @AllArgsConstructor
 public class RoleService {

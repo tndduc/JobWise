@@ -29,7 +29,11 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/21/2023
+ */
 @ExtendWith(SpringExtension.class)
 @DisplayName("Tests for AuthController")
 public class AuthControllerTest {

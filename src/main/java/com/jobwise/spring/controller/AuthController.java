@@ -13,6 +13,7 @@ import com.jobwise.spring.model.User;
 import com.jobwise.spring.util.HttpUtils;
 import eu.bitwalker.useragentutils.UserAgent;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
+/**
+ * @author DucTN
+ * @project JobWise-main
+ * @on 11/11/2023
+ */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/auth")
@@ -37,7 +42,10 @@ public class AuthController {
     @PostMapping("/sign-in")
     @Operation(summary = "User sign in", tags = "Auth")
 
-    public ResponseEntity<?> signIn(@Valid @RequestBody LoginRequest loginRequest, HttpServletRequest request) {
+    public ResponseEntity<?> signIn(
+            @Valid @RequestBody
+            @Parameter(description="Email and password to login. Cannot be empty.",
+                    required=true)LoginRequest loginRequest,HttpServletRequest request) {
         UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
         String ipAddress = HttpUtils.getClientIp();
 
